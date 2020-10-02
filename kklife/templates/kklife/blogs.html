@@ -1,4 +1,18 @@
 {% extends 'kklife/base.html' %}
 {% block content %}
 <h1> BLOGS </h1>
+    <!-- for every blog in blogs -->
+    {% for blog in blogs %}
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ blog.author }}</a>
+                <small class="text-muted">{{ blog.published_date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ blog.title }}</a></h2>
+            <p class="article-content">{{ blog.blog_content }}</p>
+            </div>
+        </article>
+        <hr>
+    {% endfor %}
 {% endblock %}
